@@ -1,9 +1,9 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import Alert from './components/Alert';
 import TextForm from './components/TextForm';
 import About from './components/About';
 import React, { useState } from 'react'
-import Alert from './components/Alert';
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 
 function App() {
@@ -19,21 +19,18 @@ function App() {
         setAlert(null);
       }, 2000);
     }
-  
-    const toggleMode =()=>{
-      if(mode==='light')
-      {
+    
+   
+    const toggleMode =()=>{      
+      if(mode==='light'){
         setMode('dark');
         document.body.style.backgroundColor='#0d285e';
-        showAlert("Dark mode has been enabled","success");
-        // document.title= 'TextUtils - Dark Mode';
+        showAlert("Dark mode has been enabled","success"); 
       }
       else{
-      setMode('light');
+        setMode('light');        
       document.body.style.backgroundColor='white';
       showAlert("Light mode has been enabled","success");
-      // document.title= 'TextUtils - Light Mode';
-
       }
     }
   return (<>
